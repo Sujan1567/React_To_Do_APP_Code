@@ -1,0 +1,271 @@
+body {
+  background-color: darkslateblue !important;
+  /* Darker blue */
+  color: white;
+  /* Lighter text color */
+  overflow: hidden;
+  /* font-family: 'Arial', sans-serif; */
+}
+
+h1 {
+  text-align: center;
+  color: black;
+}
+
+.todo-wrapper {
+  background: #4d8ec3;
+  /* Darker sky blue */
+  padding: 2%;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  max-height: 80vh;
+  overflow: auto;
+  box-shadow: 0px 5px 7px rgb(27 27 27);
+}
+
+.todo-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgb(75, 38, 38);
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+.todo-input-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 25px;
+  color: black;
+}
+
+.todo-input-item label {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.todo-input-item input {
+  padding: 8px;
+  border: none;
+  width: 250px;
+}
+
+/* .todo-input-item .lion ::placeholder{
+  font-style: italic;
+}  */
+
+.todo-input-item input:focus {
+  outline: none;
+  border: 2px solid rgb(127, 0, 230);
+}
+
+.primary-button {
+  background-color: darkblue;
+  /* Dark purple */
+  color: white;
+  border: none;
+  border-radius: 0px;
+  margin-top: 35px;
+  padding: 10px;
+  width: 65px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+  /* Add transition for button hover effect */
+}
+
+.primary-button:hover {
+  background-color: #AB83A1;
+  /* Lighter purple on hover */
+}
+
+.btn-area {
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.secbutton {
+  background-color: #4A4E69;
+ 
+  color: white;
+  border: none;
+  border-radius: 0px;
+  margin-top: 25px;
+  padding: 10px;
+  width: fit-content;
+  cursor: pointer;
+  transition: background-color 0.3s;
+ 
+}
+
+.todo-button.active {
+  background-color:  #FF4444 ; /* Red color for Todo button */
+  color: white;
+}
+
+.complete-button.active {
+  background-color: #4CAF50 ; /* Green color for Complete button */
+  color: white;
+}
+
+.active {
+  background-color: #134074;
+  /* Darker blue on active */
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.todo-list-item {
+  background-color: skyblue;
+  /* Darker navy blue */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 5px rgb(27 27 27);
+}
+
+.todo-list-item h3,
+.todo-list-item p {
+  color: black;
+  /* Lighter text color in todo-list items */
+}
+
+/* .icon,
+  .check-icon {
+    color: #F76C6C; 
+    transition: color 0.3s; 
+  }
+  
+  .icon:hover {
+    color: #F04B4B; 
+  }
+  
+  .check-icon:hover {
+    color: #F9844A; 
+  } */
+
+
+/* Adding the margin and padding to icons and buttons. */
+.todo-list-item .task-info .icon,
+.todo-list-item .task-info .check-icon,
+.todo-list-item .task-info button {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.icon {
+  font-size: 40px;
+  cursor: pointer;
+  color: red;
+}
+
+/* .icon:hover{
+    color: red;
+  } */
+
+.check-icon {
+  font-size: 35px;
+  /* margin-left: 10px; */
+  /* color:blueviolet; */
+  cursor: pointer;
+  color: green;
+}
+
+.edit {
+  font-size: 27px;
+  cursor: pointer;
+  color: darkorange;
+}
+
+/* .check-icon:hover{
+    content: "Completed";
+  } */
+
+.todo-list-item .task-info .icon:hover::before,
+.todo-list-item .task-info .check-icon:hover::before {
+  content: attr(data-tooltip);
+  /* Use data-tooltip attribute for custom tooltip text */
+  position: absolute;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  bottom: 150%;
+  /* Position above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip styling for the delete icon */
+.todo-list-item .task-info .icon:hover::before {
+  background-color: #FF4444;
+  /* Red color for delete tooltip */
+}
+
+/* Tooltip styling for the complete icon */
+.todo-list-item .task-info .check-icon:hover::before {
+  background-color: #4CAF50;
+  /* Green color for complete tooltip */
+}
+
+/* proper.css */
+
+/* Add styles for the edit input fields */
+.todo-list-item input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+/* Style the Save button in edit mode */
+.todo-list-item button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+/* Style the Edit button */
+.todo-list-item button:last-child {
+  background-color: #2196f3;
+}
+
+.todo-list-item .task-info {
+  display: flex;
+  align-items: center;
+  /* Align items vertically centered */
+}
+
+/* Style the edit icon in the task-info section */
+.todo-list-item .task-info button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  /* margin-right: 8px; */
+}
+
+/* Add a border to highlight the edit mode */
+.todo-list-item.editing {
+  border: 2px solid #2196f3;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 16px;
+}
